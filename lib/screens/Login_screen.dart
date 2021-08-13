@@ -1,3 +1,4 @@
+import 'package:events_app/screens/FullEventScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 
@@ -290,6 +291,17 @@ class _LoginScreenState extends State<LoginScreen> {
                       onTap: () {
                         //The developer needs to WRITE THE LOGIN ON SKIP CLICKED here
                         //==>
+
+                        //Starting the activity designed to test thye full event screen (Vanishing teh login Auth)
+                        Navigator.pushAndRemoveUntil<dynamic>(
+                          context,
+                          MaterialPageRoute<dynamic>(
+                            builder: (BuildContext context) => FullEventScreen(
+                              uid: 2,
+                            ),
+                          ),
+                          (route) => false, //To diable the back button
+                        );
                       },
                       child: Container(
                         margin: EdgeInsets.all(10),
